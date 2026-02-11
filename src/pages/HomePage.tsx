@@ -76,9 +76,21 @@ export default function HomePage() {
     <div>
       <section className="relative text-black pt-8 pb-20 md:pt-12 md:pb-32 overflow-hidden min-h-[600px] md:min-h-[700px]">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200"></div>
+
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png')",
+              maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 15%, black 30%)",
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 15%, black 30%)"
+            }}
+          />
+        </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch h-full">
-            <div className="flex flex-col justify-between space-y-6 py-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center h-full">
+            <div className="flex flex-col justify-center space-y-6 py-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
                 Crack Govt Exams in Guwahati with Expert-Led Coaching
               </h1>
@@ -114,13 +126,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="hidden lg:flex items-stretch relative">
+            <div className="lg:hidden">
               <div
-                className="w-full h-full bg-cover bg-center relative"
+                className="w-full h-64 bg-cover bg-center rounded-2xl"
                 style={{
-                  backgroundImage: "url('/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png')",
-                  maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 15%, black 30%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 15%, black 30%)"
+                  backgroundImage: "url('/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png')"
                 }}
               />
             </div>
