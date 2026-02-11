@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,13 +47,12 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <a
-              href="tel:+916002346625"
-              className="flex items-center space-x-2 bg-secondary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#004BB8] transition-colors"
+            <Link
+              to="/courses"
+              className="bg-[#0066FF] text-white px-8 py-3 rounded-xl font-medium hover:bg-[#0052CC] transition-colors shadow-md hover:shadow-lg"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call Now</span>
-            </a>
+              Explore Programs
+            </Link>
           </nav>
 
           <button
@@ -82,13 +81,13 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <a
-              href="tel:+916002346625"
-              className="flex items-center justify-center space-x-2 bg-secondary text-white px-6 py-3 rounded-lg font-medium hover:bg-[#004BB8] transition-colors"
+            <Link
+              to="/courses"
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-center bg-[#0066FF] text-white px-8 py-3 rounded-xl font-medium hover:bg-[#0052CC] transition-colors shadow-md"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call Now</span>
-            </a>
+              Explore Programs
+            </Link>
           </nav>
         </div>
       )}
