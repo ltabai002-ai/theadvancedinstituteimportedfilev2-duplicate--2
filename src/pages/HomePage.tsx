@@ -109,10 +109,10 @@ export default function HomePage() {
                   <Download className="w-5 h-5" />
                   <span>Download Brochure</span>
                 </button>
-                <button className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:shadow-lg flex items-center justify-center space-x-2">
+                <Link to="/contact" className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:shadow-lg flex items-center justify-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Demo Class</span>
-                </button>
+                </Link>
               </div>
             </div>
 
