@@ -345,32 +345,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
+      <section className="py-10 md:py-12 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-cyan-100/80 to-blue-100/80 rounded-3xl shadow-xl overflow-hidden border border-cyan-200/50">
+          <div className="bg-gradient-to-br from-cyan-100/80 to-blue-100/80 rounded-2xl shadow-lg overflow-hidden border border-cyan-200/50">
             <div className="grid lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                <div className="mb-8">
-                  <img src="/image.png" alt="The Advanced Learning Academy" className="h-12 w-auto" />
+              <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+                <div className="mb-4">
+                  <img src="/image.png" alt="The Advanced Learning Academy" className="h-8 w-auto" />
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                   Level Up Your Skills with Expert-Led, Exam-Focused Courses.
                 </h2>
                 <Link
                   to="/courses"
-                  className="inline-block bg-[#0066FF] text-white px-8 py-4 rounded-xl font-medium hover:bg-[#0052CC] transition-all shadow-lg hover:shadow-xl w-fit text-lg"
+                  className="inline-block bg-[#0066FF] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#0052CC] transition-all shadow-lg hover:shadow-xl w-fit"
                 >
                   Explore Our Programs
                 </Link>
               </div>
 
-              <div className="relative min-h-[300px] lg:min-h-[400px] bg-gradient-to-br from-primary/20 to-secondary/30 flex items-center justify-center">
+              <div className="relative min-h-[200px] lg:min-h-[280px] bg-gradient-to-br from-primary/20 to-secondary/30 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
-                <div className="relative z-10 p-8 text-center">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-sm mx-auto">
-                    <Award className="w-20 h-20 text-primary mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Expert Faculty</h3>
-                    <p className="text-gray-700">Industry professionals with 15+ years of teaching experience</p>
+                <div className="relative z-10 p-6 text-center">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl max-w-xs mx-auto">
+                    <Award className="w-12 h-12 text-primary mx-auto mb-3" />
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Expert Faculty</h3>
+                    <p className="text-sm text-gray-700">Industry professionals with 15+ years experience</p>
                   </div>
                 </div>
               </div>
