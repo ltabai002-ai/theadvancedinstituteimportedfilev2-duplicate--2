@@ -90,7 +90,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-primary via-primary-light to-blue-400 text-white py-16 md:py-24 overflow-visible">
+      <section className="relative bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-24 overflow-visible">
         <div className="absolute inset-0 overflow-hidden">
           <ShaderBackground />
         </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-blue-50">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -210,7 +210,7 @@ export default function HomePage() {
                 key={course.slug}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 group"
               >
-                <div className="h-48 bg-gradient-to-br from-primary/80 to-blue-500 flex items-center justify-center relative overflow-hidden">
+                <div className="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center relative overflow-hidden">
                   <BookOpen className="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform" />
                   {index === 0 && (
                     <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -272,7 +272,7 @@ export default function HomePage() {
                   key={index}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-100 rounded-2xl transform group-hover:scale-105 transition-transform"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-primary/10 rounded-2xl transform group-hover:scale-105 transition-transform"></div>
                   <div className="relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
                     <div className="bg-gradient-to-br from-primary to-primary-dark p-4 rounded-xl inline-block mb-4">
                       <Icon className="w-8 h-8 text-white" />
@@ -286,7 +286,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-primary/5">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -301,7 +301,7 @@ export default function HomePage() {
             {programSteps.map((step, index) => (
               <div key={index} className="flex items-start mb-8 last:mb-0 relative">
                 {index < programSteps.length - 1 && (
-                  <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-gradient-to-b from-primary to-primary-light"></div>
+                  <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
                 )}
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg z-10 mr-6">
                   {index + 1}
@@ -333,7 +333,7 @@ export default function HomePage() {
               { name: "Amit Kumar", exam: "Banking PO", status: "Selected", score: "Prelims: 82/100" }
             ].map((student, i) => (
               <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
-                <div className="h-56 bg-gradient-to-br from-primary via-primary-light to-blue-400 flex items-center justify-center relative overflow-hidden">
+                <div className="h-56 bg-gradient-to-br from-primary to-secondary flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-white/5"></div>
                   <Award className="w-20 h-20 text-white relative z-10" />
                   <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -364,7 +364,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-primary/10 via-blue-50 to-primary/5">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center border border-primary/10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -380,7 +380,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-primary/5">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -416,7 +416,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-primary via-primary-light to-blue-400 relative overflow-hidden">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-white/5"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-white/20 backdrop-blur-sm">

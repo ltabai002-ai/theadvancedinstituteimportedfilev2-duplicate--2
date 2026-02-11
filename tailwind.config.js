@@ -5,23 +5,24 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#4A9FF5',
-          dark: '#2E88E5',
-          light: '#6DB4F7',
+          DEFAULT: '#3FA9E3',
+          dark: '#1A5087',
+          light: '#5CB8E8',
         },
         secondary: {
-          DEFAULT: '#14B8A6',
-          dark: '#0D9488',
-          light: '#2DD4BF',
+          DEFAULT: '#1A5087',
+          dark: '#0F3558',
+          light: '#2E6BA3',
         },
         accent: {
-          DEFAULT: '#F59E0B',
-          dark: '#D97706',
-          light: '#FBBF24',
+          DEFAULT: '#3FA9E3',
+          dark: '#2E88C5',
+          light: '#5CB8E8',
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
