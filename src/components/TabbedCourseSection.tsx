@@ -46,7 +46,8 @@ const courses: Course[] = [
     duration: '6 Months',
     cohortStart: '10th March 2026',
     slug: 'banking',
-    category: 'Banking'
+    category: 'Banking',
+    backgroundImage: '/banking-background.jpg'
   }
 ];
 
