@@ -18,7 +18,7 @@ const slides: Slide[] = [
     id: 1,
     headline: "Crack Govt Exams in Guwahati with Expert-Led Coaching",
     subheadline: "Join India's Leading Government Exam Institute",
-    personImage: "/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png",
+    personImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     personName: "Expert Faculty",
     personRole: "15+ Years Experience",
     bullets: [
@@ -32,7 +32,7 @@ const slides: Slide[] = [
     id: 2,
     headline: "SSC & Railway Exam Preparation That Works",
     subheadline: "95% Success Rate with Proven Methods",
-    personImage: "/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png",
+    personImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
     personName: "Success Story",
     personRole: "AIR 247 - RRB NTPC",
     bullets: [
@@ -46,7 +46,7 @@ const slides: Slide[] = [
     id: 3,
     headline: "Your Dream Government Job Starts Here",
     subheadline: "500+ Students Selected in Last Year",
-    personImage: "/2bcff076-87b2-405a-b4d1-a4287e6f29c7.png",
+    personImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
     personName: "Top Ranker",
     personRole: "SSC CGL Selected",
     bullets: [
@@ -67,7 +67,7 @@ export default function HeroSlider() {
     
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 2000); // Changed from 5000ms to 2000ms (2 seconds)
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
