@@ -7,6 +7,7 @@ import CourseDetailPage from './pages/CourseDetailPage';
 import AboutPage from './pages/AboutPage';
 import ResultsPage from './pages/ResultsPage';
 import ContactPage from './pages/ContactPage';
+import FeatureCarouselDemo from './pages/FeatureCarouselDemo';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="results" element={<ResultsPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="carousel-demo" element={<FeatureCarouselDemo />} />
         </Route>
       </Routes>
     </BrowserRouter>
