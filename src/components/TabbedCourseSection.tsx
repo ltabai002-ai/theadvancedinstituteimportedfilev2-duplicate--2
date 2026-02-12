@@ -29,7 +29,8 @@ const courses: Course[] = [
     cohortStart: '15th March 2026',
     slug: 'ssc-cgl',
     category: 'SSC',
-    logo: '/ssc-logo.png'
+    logo: '/ssc-logo.png',
+    backgroundImage: '/ssc-office-background.jpg'
   },
   {
     name: 'SSC CHSL',
