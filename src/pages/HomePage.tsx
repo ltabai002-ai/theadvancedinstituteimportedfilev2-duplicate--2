@@ -286,30 +286,32 @@ export default function HomePage() {
                 qualification: "Ph.D. in Mathematics", 
                 experience: "15+ Years", 
                 specialization: "Quantitative Aptitude & Reasoning",
-                icon: GraduationCap
+                image: "/faculty-1.jpg"
               },
               { 
                 name: "Prof. Anita Sharma", 
                 qualification: "M.A. English Literature", 
                 experience: "12+ Years", 
                 specialization: "English & General Awareness",
-                icon: BookOpen
+                image: "/faculty-2.jpg"
               },
               { 
                 name: "Mr. Vikram Singh", 
                 qualification: "Ex-Railway Officer", 
                 experience: "10+ Years", 
                 specialization: "RRB & Technical Subjects",
-                icon: Award
+                image: "/faculty-3.jpg"
               }
             ].map((faculty, i) => {
-              const Icon = faculty.icon;
               return (
                 <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
                   <div className="h-56 bg-gradient-to-br from-primary to-secondary flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-white/5"></div>
-                    <Icon className="w-20 h-20 text-white relative z-10" />
-                    <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    <img 
+                      src={faculty.image} 
+                      alt={faculty.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold z-10">
                       {faculty.experience}
                     </div>
                   </div>
