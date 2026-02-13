@@ -82,28 +82,38 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop: Normal Grid */}
           <div className="hidden md:grid md:grid-cols-5 gap-8">
-            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors">
-              <Users className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200">
+              <div className="bg-white p-3 rounded-full shadow-md mb-3">
+                <Users className="w-6 h-6" style={{ color: '#0C64E5' }} />
+              </div>
               <span className="text-sm md:text-base font-semibold text-gray-900">Small Batches</span>
               <span className="text-xs text-gray-600">Max 20 Students</span>
             </div>
-            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors">
-              <BookOpen className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-200">
+              <div className="bg-white p-3 rounded-full shadow-md mb-3">
+                <BookOpen className="w-6 h-6" style={{ color: '#10B981' }} />
+              </div>
               <span className="text-sm md:text-base font-semibold text-gray-900">Study Material</span>
               <span className="text-xs text-gray-600">Print + Digital</span>
             </div>
-            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors">
-              <ClipboardCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-200">
+              <div className="bg-white p-3 rounded-full shadow-md mb-3">
+                <ClipboardCheck className="w-6 h-6" style={{ color: '#F59E0B' }} />
+              </div>
               <span className="text-sm md:text-base font-semibold text-gray-900">Mock Tests</span>
               <span className="text-xs text-gray-600">Full Length</span>
             </div>
-            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors">
-              <UserCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200">
+              <div className="bg-white p-3 rounded-full shadow-md mb-3">
+                <UserCheck className="w-6 h-6" style={{ color: '#8B5CF6' }} />
+              </div>
               <span className="text-sm md:text-base font-semibold text-gray-900">Mentoring</span>
               <span className="text-xs text-gray-600">Personalized</span>
             </div>
-            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors">
-              <MapPin className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200">
+              <div className="bg-white p-3 rounded-full shadow-md mb-3">
+                <MapPin className="w-6 h-6" style={{ color: '#06B6D4' }} />
+              </div>
               <span className="text-sm md:text-base font-semibold text-gray-900">Guwahati</span>
               <span className="text-xs text-gray-600">Prime Location</span>
             </div>
@@ -111,55 +121,75 @@ export default function HomePage() {
 
           {/* Mobile: Scrolling Animation */}
           <div className="md:hidden relative">
-            <div className="flex gap-8 animate-scroll-left">
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <Users className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+            <div className="flex gap-6 animate-scroll-left">
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <Users className="w-5 h-5" style={{ color: '#0C64E5' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Small Batches</span>
                 <span className="text-xs text-gray-600">Max 20 Students</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <BookOpen className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <BookOpen className="w-5 h-5" style={{ color: '#10B981' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Study Material</span>
                 <span className="text-xs text-gray-600">Print + Digital</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <ClipboardCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <ClipboardCheck className="w-5 h-5" style={{ color: '#F59E0B' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Mock Tests</span>
                 <span className="text-xs text-gray-600">Full Length</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <UserCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <UserCheck className="w-5 h-5" style={{ color: '#8B5CF6' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Mentoring</span>
                 <span className="text-xs text-gray-600">Personalized</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <MapPin className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <MapPin className="w-5 h-5" style={{ color: '#06B6D4' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Guwahati</span>
                 <span className="text-xs text-gray-600">Prime Location</span>
               </div>
               {/* Duplicate for seamless loop */}
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <Users className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <Users className="w-5 h-5" style={{ color: '#0C64E5' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Small Batches</span>
                 <span className="text-xs text-gray-600">Max 20 Students</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <BookOpen className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <BookOpen className="w-5 h-5" style={{ color: '#10B981' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Study Material</span>
                 <span className="text-xs text-gray-600">Print + Digital</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <ClipboardCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <ClipboardCheck className="w-5 h-5" style={{ color: '#F59E0B' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Mock Tests</span>
                 <span className="text-xs text-gray-600">Full Length</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <UserCheck className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <UserCheck className="w-5 h-5" style={{ color: '#8B5CF6' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Mentoring</span>
                 <span className="text-xs text-gray-600">Personalized</span>
               </div>
-              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl transition-colors min-w-[140px]">
-                <MapPin className="w-6 h-6 mb-2" style={{ color: '#0C64E5' }} />
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200 shadow-md min-w-[140px]">
+                <div className="bg-white p-2.5 rounded-full shadow mb-2">
+                  <MapPin className="w-5 h-5" style={{ color: '#06B6D4' }} />
+                </div>
                 <span className="text-sm font-semibold text-gray-900">Guwahati</span>
                 <span className="text-xs text-gray-600">Prime Location</span>
               </div>
