@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Calendar, ChevronRight, ChevronLeft, ChevronUp } from 'lucide-react';
+import { Clock, Calendar, ChevronRight, ChevronLeft, ChevronUp, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Course {
@@ -56,6 +56,7 @@ const categories = ['RRB', 'SSC', 'Banking'];
 
 export default function TabbedCourseSection() {
   const [selectedCategory, setSelectedCategory] = useState('Most Popular');
+  const [isCarouselExpanded, setIsCarouselExpanded] = useState(true);
   const coursesAnimation = useScrollAnimation({ direction: 'up', delay: 100 });
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -145,6 +146,7 @@ export default function TabbedCourseSection() {
                       onClick={() => {
                         setSelectedCategory(category);
                         setCurrentSlide(0);
+                        setIsCarouselExpanded(true);
                       }}
                       className="w-full text-left px-6 py-4 rounded-xl transition-all font-satoshi font-normal text-base leading-[26px] text-gray-700 hover:bg-[#004BB8] hover:text-white"
                     >
@@ -158,14 +160,20 @@ export default function TabbedCourseSection() {
               <div className="space-y-6">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden p-2">
                   <button
+                    onClick={() => setIsCarouselExpanded(!isCarouselExpanded)}
                     className="w-full flex items-center justify-between px-6 py-4 rounded-xl transition-all font-satoshi font-normal text-base leading-[26px] bg-white text-blue-600 border-2 border-blue-600 shadow-md"
                   >
                     <span>{selectedCategory}</span>
-                    <ChevronUp className="w-5 h-5 text-blue-600" />
+                    {isCarouselExpanded ? (
+                      <ChevronUp className="w-5 h-5 text-blue-600" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-blue-600" />
+                    )}
                   </button>
                 </div>
 
                 {/* Mobile Carousel View */}
+                {isCarouselExpanded && (
                 <div className="relative">
                   <div
                     ref={carouselRef}
@@ -279,6 +287,7 @@ export default function TabbedCourseSection() {
                     </div>
                   )}
                 </div>
+                )}
               </div>
 
               {/* Categories After Selected */}
@@ -290,6 +299,7 @@ export default function TabbedCourseSection() {
                       onClick={() => {
                         setSelectedCategory(category);
                         setCurrentSlide(0);
+                        setIsCarouselExpanded(true);
                       }}
                       className="w-full text-left px-6 py-4 rounded-xl transition-all font-satoshi font-normal text-base leading-[26px] text-gray-700 hover:bg-[#004BB8] hover:text-white"
                     >
