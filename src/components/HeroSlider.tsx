@@ -216,13 +216,13 @@ export default function HeroSlider() {
         </div>
 
         {/* Mobile: Content Section - Clean White Background */}
-        <div className="bg-white px-5 py-4 pb-20">
-          <div 
+        <div className="bg-white px-5 py-4 pb-24">
+          <div
             key={`mobile-content-${slide.id}`}
             className="space-y-0"
           >
             {/* Eyebrow Text - Context Label */}
-            <p 
+            <p
               className="text-[13px] font-medium leading-[1.4] mb-3 opacity-0"
               style={{
                 color: '#4A5568',
@@ -256,40 +256,41 @@ export default function HeroSlider() {
             >
               {slide.subtext}
             </p>
-
-            {/* Primary CTA Button - Full Width with Shadow */}
-            <Link
-              to={slide.ctaLink}
-              className="block w-full text-white h-[44px] rounded-lg text-[14px] font-medium transition-all duration-300 text-center opacity-0"
-              style={{
-                background: 'linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%)',
-                letterSpacing: '0.01em',
-                lineHeight: '44px',
-                boxShadow: '0 2px 8px rgba(13, 110, 253, 0.25)',
-                animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#0A58CA';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 110, 253, 0.35)';
-                e.currentTarget.style.transform = 'translateY(-1px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%)';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(13, 110, 253, 0.25)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-              onMouseDown={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 1px 4px rgba(13, 110, 253, 0.3)';
-              }}
-              onMouseUp={(e) => {
-                e.currentTarget.style.transform = 'translateY(-1px)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 110, 253, 0.35)';
-              }}
-            >
-              {slide.ctaText}
-            </Link>
           </div>
+        </div>
+
+        {/* Primary CTA Button - Sticky at Bottom (Mobile Only) */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 px-5 py-3 shadow-lg">
+          <Link
+            to={slide.ctaLink}
+            className="block w-full text-white h-[44px] rounded-lg text-[14px] font-medium transition-all duration-300 text-center"
+            style={{
+              background: 'linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%)',
+              letterSpacing: '0.01em',
+              lineHeight: '44px',
+              boxShadow: '0 2px 8px rgba(13, 110, 253, 0.25)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#0A58CA';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 110, 253, 0.35)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(13, 110, 253, 0.25)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+            onMouseDown={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 1px 4px rgba(13, 110, 253, 0.3)';
+            }}
+            onMouseUp={(e) => {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 110, 253, 0.35)';
+            }}
+          >
+            {slide.ctaText}
+          </Link>
         </div>
       </div>
 
