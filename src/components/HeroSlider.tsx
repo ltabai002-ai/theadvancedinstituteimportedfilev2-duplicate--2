@@ -230,7 +230,7 @@ export default function HeroSlider() {
         </div>
 
         {/* Mobile: Content Section - Clean White Background */}
-        <div className="bg-white px-5 py-4 pb-24">
+        <div className="bg-white px-5 py-4 pb-8">
           <div
             key={`mobile-content-${slide.id}`}
             className="space-y-0"
@@ -262,7 +262,7 @@ export default function HeroSlider() {
 
             {/* Subtext - Supporting Description */}
             <p
-              className="text-[13px] font-normal leading-[1.5] mb-24"
+              className="text-[13px] font-normal leading-[1.5] mb-6"
               style={{
                 color: '#718096'
               }}
