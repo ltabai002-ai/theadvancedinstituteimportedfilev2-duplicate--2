@@ -216,31 +216,29 @@ export default function HeroSlider() {
         </div>
 
         {/* Mobile: Content Section - Clean White Background */}
-        <div className="bg-white px-5 py-6 pb-24">
+        <div className="bg-white px-5 py-4 pb-24">
           <div
             key={`mobile-content-${slide.id}`}
             className="space-y-0"
           >
             {/* Eyebrow Text - Context Label */}
-            {slide.eyebrowText && (
-              <p
-                className="text-[18px] font-semibold leading-[1.3] mb-2 opacity-0"
-                style={{
-                  color: '#2D3748',
-                  letterSpacing: '-0.01em',
-                  animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards'
-                }}
-              >
-                {slide.eyebrowText}
-              </p>
-            )}
+            <p
+              className="text-[13px] font-medium leading-[1.4] mb-3 opacity-0"
+              style={{
+                color: '#4A5568',
+                letterSpacing: '-0.01em',
+                animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards'
+              }}
+            >
+              {slide.eyebrowText}
+            </p>
 
             {/* Main Headline - Primary Message */}
             <h1
-              className="text-[38px] font-bold leading-[1.15] mb-6 opacity-0"
+              className="text-[24px] font-bold leading-[1.2] mb-8 opacity-0"
               style={{
                 color: '#1A202C',
-                letterSpacing: '-0.025em',
+                letterSpacing: '-0.02em',
                 WebkitFontSmoothing: 'antialiased',
                 animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards'
               }}
@@ -250,10 +248,9 @@ export default function HeroSlider() {
 
             {/* Subtext - Supporting Description */}
             <p
-              className="text-[15px] font-normal leading-[1.55] mb-8 opacity-0"
+              className="text-[13px] font-normal leading-[1.5] mb-10 opacity-0"
               style={{
-                color: '#4A5568',
-                letterSpacing: '-0.005em',
+                color: '#718096',
                 animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards'
               }}
             >
@@ -263,11 +260,11 @@ export default function HeroSlider() {
             {/* CTA Button */}
             <Link
               to={slide.ctaLink}
-              className="block w-full text-white h-[50px] rounded-lg text-[15px] font-semibold transition-all duration-300 text-center opacity-0"
+              className="block w-full text-white h-[44px] rounded-lg text-[14px] font-medium transition-all duration-300 text-center opacity-0"
               style={{
                 background: 'linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%)',
-                letterSpacing: '0.005em',
-                lineHeight: '50px',
+                letterSpacing: '0.01em',
+                lineHeight: '44px',
                 boxShadow: '0 2px 8px rgba(13, 110, 253, 0.25)',
                 animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards'
               }}
