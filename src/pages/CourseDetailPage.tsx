@@ -12,6 +12,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import LeadForm from '../components/LeadForm';
+import CourseRoadmap from '../components/CourseRoadmap';
 import { useState } from 'react';
 
 interface CourseData {
@@ -48,6 +49,13 @@ interface CourseData {
     amount: string;
     installments: string;
   };
+  curriculum: {
+    month: number;
+    phase: string;
+    focusAreas: string[];
+    activities: string[];
+    milestones: string;
+  }[];
 }
 
 const coursesData: Record<string, CourseData> = {
@@ -113,7 +121,51 @@ const coursesData: Record<string, CourseData> = {
     fees: {
       amount: '₹25,000',
       installments: 'Available in 2 installments'
-    }
+    },
+    curriculum: [
+      {
+        month: 1,
+        phase: 'Foundation Building',
+        focusAreas: ['Basic Mathematics concepts', 'Fundamental Reasoning skills', 'General Awareness basics'],
+        activities: ['Daily practice sessions', 'Topic-wise tests', 'Concept clarity workshops'],
+        milestones: 'Complete foundation topics in all three subjects'
+      },
+      {
+        month: 2,
+        phase: 'Foundation Building',
+        focusAreas: ['Advanced Number System', 'Analytical Reasoning', 'Indian History & Geography'],
+        activities: ['Weekly mock tests', 'Previous year paper analysis', 'Speed building exercises'],
+        milestones: 'Achieve 60% accuracy in foundation level tests'
+      },
+      {
+        month: 3,
+        phase: 'Intermediate Mastery',
+        focusAreas: ['Time & Work problems', 'Complex puzzles', 'Current Affairs integration'],
+        activities: ['Full-length mock tests', 'Error analysis sessions', 'Time management training'],
+        milestones: 'Complete CBT 1 syllabus coverage and achieve 70% accuracy'
+      },
+      {
+        month: 4,
+        phase: 'Intermediate Mastery',
+        focusAreas: ['Advanced Mathematics', 'High-level Reasoning', 'Polity & Economics'],
+        activities: ['CBT 2 level practice', 'Sectional mock tests', 'Revision of completed topics'],
+        milestones: 'Master advanced concepts and reach 75% accuracy'
+      },
+      {
+        month: 5,
+        phase: 'Advanced Practice',
+        focusAreas: ['Speed accuracy balance', 'Exam pattern familiarization', 'Weak area improvement'],
+        activities: ['Daily full-length mocks', 'Performance analysis', 'Strategy refinement'],
+        milestones: 'Consistent 80%+ accuracy in mock tests'
+      },
+      {
+        month: 6,
+        phase: 'Final Sprint',
+        focusAreas: ['Complete revision', 'Last minute tips', 'Exam day strategy'],
+        activities: ['Final mock tests', 'Quick revision notes', 'Mental preparation sessions'],
+        milestones: 'Exam ready with 85%+ target accuracy'
+      }
+    ]
   },
   'ssc-cgl': {
     name: 'SSC CGL',
@@ -167,7 +219,72 @@ const coursesData: Record<string, CourseData> = {
     fees: {
       amount: '₹40,000',
       installments: 'Available in 3 installments'
-    }
+    },
+    curriculum: [
+      {
+        month: 1,
+        phase: 'Tier 1 Foundation',
+        focusAreas: ['Basic Quantitative Aptitude', 'Grammar fundamentals', 'Reasoning basics'],
+        activities: ['Daily class sessions', 'Topic-wise assignments', 'Weekly tests'],
+        milestones: 'Build strong foundation in all four subjects'
+      },
+      {
+        month: 2,
+        phase: 'Tier 1 Foundation',
+        focusAreas: ['Number systems mastery', 'Reading comprehension', 'Logical reasoning'],
+        activities: ['Practice worksheets', 'Vocabulary building', 'Current affairs updates'],
+        milestones: 'Complete 40% of Tier 1 syllabus'
+      },
+      {
+        month: 3,
+        phase: 'Tier 1 Foundation',
+        focusAreas: ['Geometry & Mensuration', 'Error spotting', 'General awareness'],
+        activities: ['Mock test series begins', 'Error analysis', 'Speed enhancement drills'],
+        milestones: 'Achieve 65% accuracy in Tier 1 practice tests'
+      },
+      {
+        month: 4,
+        phase: 'Tier 1 Advanced',
+        focusAreas: ['Advanced QA problems', 'Sentence improvement', 'Static GK coverage'],
+        activities: ['Full-length Tier 1 mocks', 'Performance tracking', 'Doubt clearing sessions'],
+        milestones: 'Complete Tier 1 syllabus and reach 75% accuracy'
+      },
+      {
+        month: 5,
+        phase: 'Tier 1 Advanced',
+        focusAreas: ['High-difficulty questions', 'Cloze test mastery', 'Current affairs mastery'],
+        activities: ['Daily mock tests', 'Time management training', 'Strategy workshops'],
+        milestones: 'Consistent 80%+ scores in Tier 1 mocks'
+      },
+      {
+        month: 6,
+        phase: 'Tier 1 Advanced',
+        focusAreas: ['Revision and practice', 'Weak area improvement', 'Exam strategy'],
+        activities: ['Final Tier 1 mocks', 'Quick revision', 'Mental preparation'],
+        milestones: 'Tier 1 exam ready with target 85%+ accuracy'
+      },
+      {
+        month: 7,
+        phase: 'Tier 2 Preparation',
+        focusAreas: ['Advanced Quantitative Aptitude', 'Advanced English', 'Statistics basics'],
+        activities: ['Tier 2 mock tests', 'In-depth concept coverage', 'Previous year analysis'],
+        milestones: 'Complete 50% of Tier 2 syllabus'
+      },
+      {
+        month: 8,
+        phase: 'Tier 2 Preparation',
+        focusAreas: ['Complex QA problems', 'Comprehension mastery', 'Statistics for specific posts'],
+        activities: ['Tier 2 full-length mocks', 'Speed and accuracy drills', 'Performance analysis'],
+        milestones: 'Tier 2 ready with 75%+ accuracy'
+      },
+      {
+        month: 9,
+        phase: 'Tier 3 & Interview',
+        focusAreas: ['Essay writing', 'Letter writing', 'Interview skills'],
+        activities: ['Descriptive paper practice', 'Mock interviews', 'Personality development'],
+        milestones: 'Complete preparation for all tiers'
+      }
+    ]
   },
   'ssc-chsl': {
     name: 'SSC CHSL',
@@ -213,7 +330,51 @@ const coursesData: Record<string, CourseData> = {
     fees: {
       amount: '₹22,000',
       installments: 'Available in 2 installments'
-    }
+    },
+    curriculum: [
+      {
+        month: 1,
+        phase: 'Foundation Building',
+        focusAreas: ['Basic English grammar', 'Fundamental Mathematics', 'Basic Reasoning'],
+        activities: ['Daily class sessions', 'Practice exercises', 'Weekly assessments'],
+        milestones: 'Build strong foundation for 10+2 level preparation'
+      },
+      {
+        month: 2,
+        phase: 'Foundation Building',
+        focusAreas: ['Vocabulary building', 'Quantitative Aptitude basics', 'General Awareness'],
+        activities: ['Reading comprehension practice', 'Speed math drills', 'Current affairs classes'],
+        milestones: 'Complete 40% syllabus with 60% accuracy'
+      },
+      {
+        month: 3,
+        phase: 'Intermediate Mastery',
+        focusAreas: ['Advanced English topics', 'Complex QA problems', 'Analytical reasoning'],
+        activities: ['Mock test series begins', 'Error analysis sessions', 'Typing test practice'],
+        milestones: 'Achieve 70% accuracy in mock tests'
+      },
+      {
+        month: 4,
+        phase: 'Intermediate Mastery',
+        focusAreas: ['Speed and accuracy', 'All subjects revision', 'Weak area focus'],
+        activities: ['Full-length mock tests', 'Sectional tests', 'Time management training'],
+        milestones: 'Complete syllabus and reach 75% accuracy'
+      },
+      {
+        month: 5,
+        phase: 'Advanced Practice',
+        focusAreas: ['High-difficulty questions', 'Exam pattern mastery', 'Typing speed enhancement'],
+        activities: ['Daily full-length mocks', 'Performance analysis', 'Skill test preparation'],
+        milestones: 'Consistent 80%+ accuracy in all subjects'
+      },
+      {
+        month: 6,
+        phase: 'Final Sprint',
+        focusAreas: ['Complete revision', 'Quick tips and tricks', 'Exam strategy'],
+        activities: ['Final mock tests', 'Revision sessions', 'Mental preparation'],
+        milestones: 'Exam ready with 85%+ target accuracy'
+      }
+    ]
   },
   'banking': {
     name: 'Banking Exams',
@@ -263,7 +424,51 @@ const coursesData: Record<string, CourseData> = {
     fees: {
       amount: '₹28,000',
       installments: 'Available in 2 installments'
-    }
+    },
+    curriculum: [
+      {
+        month: 1,
+        phase: 'Preliminary Phase',
+        focusAreas: ['Basic Reasoning Ability', 'Quantitative Aptitude foundation', 'English Language basics'],
+        activities: ['Daily class sessions', 'Banking terminology', 'Practice worksheets'],
+        milestones: 'Build foundation for banking exams'
+      },
+      {
+        month: 2,
+        phase: 'Preliminary Phase',
+        focusAreas: ['Puzzles & Seating', 'Data Interpretation', 'Reading comprehension'],
+        activities: ['Prelims mock tests', 'Banking awareness classes', 'Speed building drills'],
+        milestones: 'Complete 50% preliminary syllabus with 65% accuracy'
+      },
+      {
+        month: 3,
+        phase: 'Preliminary Phase',
+        focusAreas: ['Advanced reasoning', 'Complex DI problems', 'English mastery'],
+        activities: ['Full-length prelims mocks', 'Computer knowledge', 'Current affairs updates'],
+        milestones: 'Prelims exam ready with 75%+ accuracy'
+      },
+      {
+        month: 4,
+        phase: 'Mains Phase',
+        focusAreas: ['Advanced Reasoning', 'High-level Quantitative', 'Descriptive English'],
+        activities: ['Mains mock tests', 'Banking & Financial Awareness', 'Essay writing practice'],
+        milestones: 'Complete 50% mains syllabus'
+      },
+      {
+        month: 5,
+        phase: 'Mains Phase',
+        focusAreas: ['Complex problem solving', 'Data sufficiency', 'Letter & essay writing'],
+        activities: ['Full-length mains mocks', 'Computer knowledge deep dive', 'Performance analysis'],
+        milestones: 'Mains ready with 70%+ accuracy'
+      },
+      {
+        month: 6,
+        phase: 'Interview Phase',
+        focusAreas: ['Interview skills', 'Group discussion', 'Final revision'],
+        activities: ['Mock interviews', 'GD practice', 'Personality development'],
+        milestones: 'Complete preparation for all stages including interview'
+      }
+    ]
   }
 };
 
@@ -336,6 +541,10 @@ export default function CourseDetailPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div>
+                <CourseRoadmap curriculum={course.curriculum} duration={course.duration} />
               </div>
 
               <div>
