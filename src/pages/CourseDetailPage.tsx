@@ -244,8 +244,23 @@ export default function CourseDetailPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-20 relative"
+        style={
+          courseSlug === 'rrb-ntpc'
+            ? {
+                backgroundImage: 'url(/train-background.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }
+            : undefined
+        }
+      >
+        {courseSlug === 'rrb-ntpc' && (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary-dark/90" />
+        )}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{course.name}</h1>
             <p className="text-xl text-blue-50 mb-8">{course.description}</p>
