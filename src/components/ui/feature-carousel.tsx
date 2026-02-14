@@ -14,15 +14,42 @@ interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
 export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
   ({ title, subtitle, images, className, ...props }, ref) => {
     const [currentIndex, setCurrentIndex] = React.useState(Math.floor(images.length / 2));
+    const [touchStart, setTouchStart] = React.useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
+
+    const minSwipeDistance = 50;
 
     const handleNext = React.useCallback(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, [images.length]);
 
-    const handlePrev = () => {
+    const handlePrev = React.useCallback(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    }, [images.length]);
+
+    const onTouchStart = (e: React.TouchEvent) => {
+      setTouchEnd(null);
+      setTouchStart(e.targetTouches[0].clientX);
     };
-    
+
+    const onTouchMove = (e: React.TouchEvent) => {
+      setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+      if (!touchStart || !touchEnd) return;
+
+      const distance = touchStart - touchEnd;
+      const isLeftSwipe = distance > minSwipeDistance;
+      const isRightSwipe = distance < -minSwipeDistance;
+
+      if (isLeftSwipe) {
+        handleNext();
+      } else if (isRightSwipe) {
+        handlePrev();
+      }
+    };
+
     React.useEffect(() => {
         const timer = setInterval(() => {
             handleNext();
@@ -60,7 +87,12 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
           {/* Main Showcase Section */}
           <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center">
             {/* Carousel Wrapper */}
-            <div className="relative w-full h-full flex items-center justify-center [perspective:1000px]">
+            <div
+              className="relative w-full h-full flex items-center justify-center [perspective:1000px]"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               {images.map((image, index) => {
                 const offset = index - currentIndex;
                 const total = images.length;
