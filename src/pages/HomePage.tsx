@@ -225,7 +225,7 @@ export default function HomePage() {
                   Hear from Our Founder
                 </h3>
 
-                <blockquote className="text-xl md:text-2xl font-semibold text-gray-900 mb-6 leading-relaxed">
+                <blockquote className="text-lg md:text-2xl font-semibold text-gray-900 mb-6 leading-relaxed">
                   "Welcome to The Advanced Learning Academy - where we transform your government job dreams into reality through expert guidance and proven strategies."
                 </blockquote>
               </div>
