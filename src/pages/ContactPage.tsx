@@ -159,7 +159,7 @@ export default function ContactPage() {
           <p className="text-lg text-gray-600 mb-8">
             Experience our teaching methodology firsthand. Book your free demo class today and start your preparation journey with us.
           </p>
-          <button className="bg-secondary text-white px-10 py-4 rounded-lg font-semibold hover:bg-[#004BB8] transition-colors text-lg">
+          <button className="bg-[#0066FF] text-white px-10 py-4 rounded-lg font-semibold hover:bg-[#004BB8] transition-colors text-lg shadow-lg">
             Book Free Demo Class
           </button>
         </div>

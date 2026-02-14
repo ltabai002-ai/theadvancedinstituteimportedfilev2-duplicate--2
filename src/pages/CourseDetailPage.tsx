@@ -809,7 +809,7 @@ export default function CourseDetailPage() {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-secondary text-white px-10 py-4 rounded-lg font-semibold hover:bg-[#004BB8] transition-colors"
+            className="inline-block bg-[#0066FF] text-white px-10 py-4 rounded-lg font-semibold hover:bg-[#004BB8] transition-colors shadow-lg"
           >
             Book Free Demo Class
           </Link>
