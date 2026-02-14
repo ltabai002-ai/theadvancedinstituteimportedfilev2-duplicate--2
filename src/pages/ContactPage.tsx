@@ -19,6 +19,20 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
+              <div className="bg-gray-50 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                <p className="text-gray-600 mb-6">
+                  Fill out the form and our team will get back to you within 24 hours
+                </p>
+                <LeadForm
+                  sourcePage="contact"
+                  showMessage={true}
+                  buttonText="Send Message"
+                />
+              </div>
+            </div>
+
+            <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
 
               <div className="space-y-6 mb-10">
@@ -105,20 +119,6 @@ export default function ContactPage() {
                     <Youtube className="w-6 h-6" />
                   </a>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
-                <p className="text-gray-600 mb-6">
-                  Fill out the form and our team will get back to you within 24 hours
-                </p>
-                <LeadForm
-                  sourcePage="contact"
-                  showMessage={true}
-                  buttonText="Send Message"
-                />
               </div>
             </div>
           </div>
