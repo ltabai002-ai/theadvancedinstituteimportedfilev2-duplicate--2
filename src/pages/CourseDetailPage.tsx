@@ -722,7 +722,7 @@ export default function CourseDetailPage() {
                   <h3 className="font-semibold text-gray-900 mb-1">Curriculum Journey</h3>
                   <p className="text-xs text-gray-600 mb-4">{course.duration} structured learning path</p>
 
-                  <div className="relative">
+                  <div className="relative max-h-[800px] overflow-y-auto pr-2">
                     {/* Vertical timeline line */}
                     <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-green-500 to-orange-500" />
 
@@ -755,8 +755,38 @@ export default function CourseDetailPage() {
                                   {month.phase}
                                 </span>
                               </div>
-                              <p className="text-xs text-gray-700 font-medium mb-1">Milestone:</p>
-                              <p className="text-xs text-gray-600 leading-relaxed">{month.milestones}</p>
+
+                              {/* Focus Areas */}
+                              <div className="mb-2">
+                                <p className="text-xs text-gray-700 font-medium mb-1">Focus Areas:</p>
+                                <ul className="text-xs text-gray-600 space-y-0.5">
+                                  {month.focusAreas.map((area, i) => (
+                                    <li key={i} className="flex items-start gap-1.5">
+                                      <span className="text-primary mt-0.5">•</span>
+                                      <span className="leading-relaxed">{area}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Activities */}
+                              <div className="mb-2">
+                                <p className="text-xs text-gray-700 font-medium mb-1">Activities:</p>
+                                <ul className="text-xs text-gray-600 space-y-0.5">
+                                  {month.activities.map((activity, i) => (
+                                    <li key={i} className="flex items-start gap-1.5">
+                                      <span className="text-gray-400 mt-0.5">▪</span>
+                                      <span className="leading-relaxed">{activity}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Milestone */}
+                              <div className={`${colorClass.split(' ')[0]} rounded-lg p-2 mt-2`}>
+                                <p className="text-xs text-gray-700 font-medium mb-0.5">Milestone:</p>
+                                <p className="text-xs text-gray-800 leading-relaxed">{month.milestones}</p>
+                              </div>
                             </div>
                           </div>
                         );
