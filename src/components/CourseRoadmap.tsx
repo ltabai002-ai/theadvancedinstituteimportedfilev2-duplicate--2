@@ -110,15 +110,18 @@ export default function CourseRoadmap({ curriculum, duration }: CourseRoadmapPro
                   )}
                 </div>
 
-                {index < curriculum.length - 1 && (
+                {index % 2 === 0 && index < curriculum.length - 1 && (
                   <div className="relative z-10 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-primary rounded-full shadow-lg flex-shrink-0">
                     <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                 )}
-                {index === curriculum.length - 1 && (
+                {index % 2 === 0 && index === curriculum.length - 1 && (
                   <div className="relative z-10 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-green-500 rounded-full shadow-lg flex-shrink-0">
                     <Award className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
                   </div>
+                )}
+                {index % 2 !== 0 && (
+                  <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 flex-shrink-0" />
                 )}
 
                 <div className={`w-full md:w-5/12 ${isEven ? 'md:text-left' : 'md:text-right'}`}>
