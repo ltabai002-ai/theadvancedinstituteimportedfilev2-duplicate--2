@@ -24,6 +24,8 @@ interface CourseData {
   batchSize: string;
   description: string;
   overview: string;
+  logo?: string;
+  backgroundImage?: string;
   highlights: string[];
   syllabus: {
     title: string;
@@ -63,6 +65,8 @@ const coursesData: Record<string, CourseData> = {
     mode: 'Classroom + Online Support',
     batchSize: '20 Students',
     description: 'Comprehensive preparation program for Railway Recruitment Board Non-Technical Popular Categories exam',
+    logo: '/indian-railways-logo.webp',
+    backgroundImage: '/train-background.webp',
     overview: 'Our RRB NTPC program is designed to provide complete preparation for all stages of the examination. The course covers all sections including General Awareness, Mathematics, and General Intelligence & Reasoning with special focus on time management and accuracy.',
     highlights: [
       'Complete syllabus coverage for all stages',
@@ -167,6 +171,8 @@ const coursesData: Record<string, CourseData> = {
     mode: 'Classroom Only',
     batchSize: '20 Students',
     description: 'Intensive coaching for Staff Selection Commission Combined Graduate Level examination',
+    logo: '/ssc-logo.webp',
+    backgroundImage: '/ssc-headquarters.webp',
     overview: 'Our SSC CGL program offers comprehensive preparation for all four tiers of the examination. With dedicated modules for each tier and specialized coaching for descriptive paper, we ensure holistic development of all skills required to crack this prestigious exam.',
     highlights: [
       'Tier-wise structured preparation',
@@ -319,6 +325,8 @@ const coursesData: Record<string, CourseData> = {
     mode: 'Classroom Only',
     batchSize: '20 Students',
     description: 'Structured program for Staff Selection Commission Combined Higher Secondary Level exam',
+    logo: '/ssc-logo.webp',
+    backgroundImage: '/ssc-chsl-background.webp',
     overview: 'Our SSC CHSL program focuses on building strong fundamentals and enhancing speed with accuracy. The course is designed for 10+2 level preparation with special emphasis on time management and exam strategy.',
     highlights: [
       'Foundation to advanced level preparation',
@@ -436,6 +444,8 @@ const coursesData: Record<string, CourseData> = {
     mode: 'Classroom Only',
     batchSize: '20 Students',
     description: 'Complete banking exam preparation covering IBPS PO, Clerk, SBI, and RBI exams',
+    logo: '/banking-logo.webp',
+    backgroundImage: '/banking-background.webp',
     overview: 'Our Banking Exams program provides comprehensive preparation for all major banking examinations including IBPS PO, IBPS Clerk, SBI PO, SBI Clerk, and RBI Grade B. The course includes specialized modules for banking awareness, financial awareness, and interview preparation.',
     highlights: [
       'Coverage of IBPS PO, Clerk, SBI, RBI exams',
@@ -568,9 +578,9 @@ export default function CourseDetailPage() {
       <section
         className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-20 relative"
         style={
-          courseSlug === 'rrb-ntpc'
+          course.backgroundImage
             ? {
-                backgroundImage: 'url(/train-background.webp)',
+                backgroundImage: `url(${course.backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
@@ -578,21 +588,24 @@ export default function CourseDetailPage() {
             : undefined
         }
       >
+        {course.backgroundImage && (
+          <div className="absolute inset-0 bg-black/40 z-0" />
+        )}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={courseSlug === 'rrb-ntpc' ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>{course.name}</h1>
-            <p className="text-xl text-blue-50 mb-8" style={courseSlug === 'rrb-ntpc' ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>{course.description}</p>
-            <div className="flex flex-wrap justify-center gap-6" style={courseSlug === 'rrb-ntpc' ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={course.backgroundImage ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>{course.name}</h1>
+            <p className="text-xl text-blue-50 mb-8" style={course.backgroundImage ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>{course.description}</p>
+            <div className="flex flex-wrap justify-center gap-6" style={course.backgroundImage ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>
               <div className="flex items-center space-x-2">
-                <Clock className="w-6 h-6" style={courseSlug === 'rrb-ntpc' ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
+                <Clock className="w-6 h-6" style={course.backgroundImage ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
                 <span className="font-semibold">{course.duration}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Users className="w-6 h-6" style={courseSlug === 'rrb-ntpc' ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
+                <Users className="w-6 h-6" style={course.backgroundImage ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
                 <span className="font-semibold">Max {course.batchSize}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <BookOpen className="w-6 h-6" style={courseSlug === 'rrb-ntpc' ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
+                <BookOpen className="w-6 h-6" style={course.backgroundImage ? { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.7))' } : undefined} />
                 <span className="font-semibold">{course.mode}</span>
               </div>
             </div>
@@ -607,11 +620,30 @@ export default function CourseDetailPage() {
               {/* Video Section */}
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Course Introduction</h2>
-                <div className="relative w-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-300">
+                <div
+                  className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-300"
+                  style={
+                    course.backgroundImage
+                      ? {
+                          backgroundImage: `url(${course.backgroundImage})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat'
+                        }
+                      : {
+                          background: 'linear-gradient(to bottom right, #f3f4f6, #e5e7eb)'
+                        }
+                  }
+                >
                   {/* 16:9 Aspect Ratio Container */}
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    {/* Overlay for better contrast */}
+                    {course.backgroundImage && (
+                      <div className="absolute inset-0 bg-black/50 z-0" />
+                    )}
+
                     {/* YouTube Video Placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
                       {/* Replace the src below with your YouTube embed URL */}
                       {/* <iframe
                         className="absolute inset-0 w-full h-full"
@@ -624,15 +656,25 @@ export default function CourseDetailPage() {
 
                       {/* Placeholder Content - Remove when adding actual video */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-4 shadow-xl">
-                          <Play className="w-10 h-10 text-white ml-1" fill="white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-800 mb-2">Course Introduction Video</h3>
-                        <p className="text-gray-600 max-w-md">
+                        {course.logo ? (
+                          <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center mb-6 shadow-2xl p-4">
+                            <img
+                              src={course.logo}
+                              alt={`${course.name} logo`}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-4 shadow-xl">
+                            <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                          </div>
+                        )}
+                        <h3 className={`text-2xl font-bold mb-2 ${course.backgroundImage ? 'text-white' : 'text-gray-800'}`} style={course.backgroundImage ? { textShadow: '2px 2px 8px rgba(0,0,0,0.7)' } : undefined}>Course Introduction Video</h3>
+                        <p className={`max-w-md ${course.backgroundImage ? 'text-gray-100' : 'text-gray-600'}`} style={course.backgroundImage ? { textShadow: '1px 1px 4px rgba(0,0,0,0.7)' } : undefined}>
                           Watch this video to learn more about the course structure, benefits, and what you'll achieve
                         </p>
-                        <div className="mt-6 px-6 py-3 bg-white rounded-lg shadow-md">
-                          <p className="text-sm text-gray-500 font-mono">
+                        <div className="mt-6 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+                          <p className="text-sm text-gray-700 font-mono">
                             Add your YouTube video here
                           </p>
                         </div>
