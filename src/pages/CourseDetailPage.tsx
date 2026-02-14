@@ -530,12 +530,14 @@ export default function CourseDetailPage() {
                     <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
                       <button
                         onClick={() => setOpenSection(openSection === index ? null : index)}
-                        className="w-full px-6 py-4 bg-white hover:bg-[#004BB8]/5 transition-colors flex justify-between items-center text-left"
+                        className={`w-full px-6 py-4 transition-colors flex justify-between items-center text-left ${
+                          openSection === index ? 'bg-[#1D4ED8] text-white' : 'bg-white hover:bg-[#004BB8]/5'
+                        }`}
                       >
-                        <span className="font-semibold text-gray-900">{section.title}</span>
+                        <span className={`font-semibold ${openSection === index ? 'text-white' : 'text-gray-900'}`}>{section.title}</span>
                         <ChevronDown
-                          className={`w-5 h-5 text-gray-500 transition-transform ${
-                            openSection === index ? 'rotate-180' : ''
+                          className={`w-5 h-5 transition-transform ${
+                            openSection === index ? 'rotate-180 text-white' : 'text-gray-500'
                           }`}
                         />
                       </button>
