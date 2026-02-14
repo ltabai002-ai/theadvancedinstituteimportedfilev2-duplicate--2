@@ -108,8 +108,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
-              <div className="bg-gray-50 rounded-2xl p-8 text-center lg:text-left w-full max-w-md lg:max-w-none">
+            <div className="order-1 lg:order-2">
+              <div className="bg-gray-50 rounded-2xl p-8 text-center lg:text-left max-w-md mx-auto lg:mx-0 lg:max-w-none">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
                 <p className="text-gray-600 mb-6">
                   Fill out the form and our team will get back to you within 24 hours
