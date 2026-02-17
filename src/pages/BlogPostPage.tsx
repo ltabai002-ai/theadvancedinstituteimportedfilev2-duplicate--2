@@ -116,21 +116,21 @@ export default function BlogPostPage() {
   const renderContent = (content: string) => {
     return content.split('\n').map((line, index) => {
       if (line.startsWith('# ')) {
-        return <h1 key={index} className="text-4xl font-bold text-gray-900 mb-6 mt-8 text-left">{line.substring(2)}</h1>;
+        return <h1 key={index} className="text-4xl font-bold text-gray-900 mb-6 mt-8">{line.substring(2)}</h1>;
       } else if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-3xl font-bold text-gray-900 mb-4 mt-8 text-left">{line.substring(3)}</h2>;
+        return <h2 key={index} className="text-3xl font-bold text-gray-900 mb-4 mt-8">{line.substring(3)}</h2>;
       } else if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-2xl font-bold text-gray-900 mb-3 mt-6 text-left">{line.substring(4)}</h3>;
+        return <h3 key={index} className="text-2xl font-bold text-gray-900 mb-3 mt-6">{line.substring(4)}</h3>;
       } else if (line.startsWith('#### ')) {
-        return <h4 key={index} className="text-xl font-bold text-gray-900 mb-2 mt-4 text-left">{line.substring(5)}</h4>;
+        return <h4 key={index} className="text-xl font-bold text-gray-900 mb-2 mt-4">{line.substring(5)}</h4>;
       } else if (line.startsWith('- ')) {
-        return <li key={index} className="ml-6 mb-2 text-gray-700 text-left list-disc">{line.substring(2)}</li>;
+        return <li key={index} className="ml-6 mb-2 text-gray-700">{line.substring(2)}</li>;
       } else if (line.startsWith('**') && line.endsWith('**')) {
-        return <p key={index} className="font-bold text-gray-900 mb-2 mt-4 text-left">{line.substring(2, line.length - 2)}</p>;
+        return <p key={index} className="font-bold text-gray-900 mb-2 mt-4">{line.substring(2, line.length - 2)}</p>;
       } else if (line.trim() === '') {
         return <div key={index} className="h-2"></div>;
       } else {
-        return <p key={index} className="text-gray-700 leading-relaxed mb-4 text-left">{line}</p>;
+        return <p key={index} className="text-gray-700 leading-relaxed mb-4">{line}</p>;
       }
     });
   };
@@ -226,7 +226,7 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          <div className="max-w-none text-left">
+          <div className="prose prose-lg max-w-none">
             {renderContent(post.content)}
           </div>
 
