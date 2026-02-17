@@ -188,22 +188,62 @@ export default function HeroSlider() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Desktop: Background Image with Gradient Overlay */}
-      <div 
-        key={`bg-desktop-${slide.id}`}
-        className="hidden lg:block absolute inset-0 animate-fadeIn"
-      >
-        <img
-          src={slide.personImage}
-          alt="Hero Background"
-          className="w-full h-full object-cover object-right"
-        />
-        {/* Desktop: Left-to-right gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent"
-          style={{
-            background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0.85) 55%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 100%)'
-          }}
-        ></div>
+      {/* Desktop: Split Layout - Text Left, Carousel Right */}
+      <div className="hidden lg:block relative w-full h-full">
+        <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto px-[5%] items-center min-h-screen">
+          {/* Left Column - Text Content (handled below) */}
+          <div></div>
+
+          {/* Right Column - 3D Carousel */}
+          <div
+            key={`desktop-carousel-${slide.id}`}
+            className="relative w-full h-[600px] flex items-center justify-center animate-fadeIn"
+          >
+            {/* 3D Carousel Wrapper */}
+            <div
+              className="relative w-full h-full flex items-center justify-center [perspective:1200px]"
+            >
+              {carouselImages.map((image, index) => {
+                const offset = index - carouselIndex;
+                const total = carouselImages.length;
+                let pos = (offset + total) % total;
+                if (pos > Math.floor(total / 2)) {
+                  pos = pos - total;
+                }
+
+                const isCenter = pos === 0;
+                const isAdjacent = Math.abs(pos) === 1;
+
+                return (
+                  <div
+                    key={`${slide.id}-desktop-${index}`}
+                    className={cn(
+                      'absolute w-80 h-[500px] transition-all duration-500 ease-out',
+                      'flex items-center justify-center'
+                    )}
+                    style={{
+                      transform: `
+                        translateX(${(pos) * 55}%)
+                        scale(${isCenter ? 1 : isAdjacent ? 0.85 : 0.7})
+                        rotateY(${(pos) * -12}deg)
+                      `,
+                      zIndex: isCenter ? 10 : isAdjacent ? 5 : 1,
+                      opacity: isCenter ? 1 : isAdjacent ? 0.5 : 0,
+                      filter: isCenter ? 'blur(0px)' : 'blur(4px)',
+                      visibility: Math.abs(pos) > 1 ? 'hidden' : 'visible',
+                    }}
+                  >
+                    <img
+                      src={image}
+                      alt={`${slide.headline} - Image ${index + 1}`}
+                      className="object-cover w-full h-full rounded-3xl border-4 border-white/30 shadow-2xl"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Layout - Simplilearn Design Pattern with 3D Carousel */}
@@ -333,13 +373,13 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* Desktop Content Container */}
-      <div className="hidden lg:block relative z-10 max-w-[1200px] mx-auto px-[5%] py-[80px] min-h-screen">
-        <div className="flex items-center h-full min-h-[calc(100vh-160px)]">
-          <div className="w-full max-w-[600px]">
+      {/* Desktop Content Container - Positioned in Left Column */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-10">
+        <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto px-[5%] h-full items-center min-h-screen">
+          <div className="pointer-events-auto">
             <div
               key={`desktop-content-${slide.id}`}
-              className="space-y-0"
+              className="space-y-0 pr-8 animate-fadeIn"
             >
               {/* Eyebrow Text */}
               {slide.eyebrowText && (
@@ -349,7 +389,7 @@ export default function HeroSlider() {
               )}
 
               {/* Main Heading */}
-              <h1 className="text-[56px] font-extrabold text-slate-900 leading-[1.15] mb-[24px] max-w-[600px]">
+              <h1 className="text-[56px] font-extrabold text-slate-900 leading-[1.15] mb-[24px]">
                 {slide.headline}
               </h1>
 
@@ -367,6 +407,8 @@ export default function HeroSlider() {
               </Link>
             </div>
           </div>
+          {/* Right column space for carousel */}
+          <div></div>
         </div>
       </div>
 
