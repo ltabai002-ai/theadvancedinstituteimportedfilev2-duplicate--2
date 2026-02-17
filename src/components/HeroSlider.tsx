@@ -402,7 +402,7 @@ export default function HeroSlider() {
               </h1>
 
               {/* Subtext */}
-              <p className="text-[20px] font-normal text-gray-600 leading-[1.6] mb-[48px]">
+              <p className="text-[20px] font-normal text-gray-600 leading-[1.6] mb-[64px]">
                 {slide.subtext}
               </p>
 
