@@ -11,7 +11,7 @@ export default function InfrastructureSection() {
     { icon: BookOpen, title: 'Extensive Library', description: 'An enviable collection of books & resources' },
     { icon: Monitor, title: 'Computer Lab', description: 'Modern systems with latest software' },
     { icon: Car, title: 'Parking Facility', description: 'Secure parking area' },
-    { icon: Coffee, title: 'Cafeteria', description: 'Hygienic food & beverages' },
+    { icon: Coffee, title: 'Cafeteria', description: 'Hygienic food & beverages at an easy reach' },
     { icon: Accessibility, title: 'Accessible Design', description: 'Wheelchair friendly campus' },
     { icon: Users, title: 'Study Rooms', description: 'Dedicated group study areas' }
   ];
