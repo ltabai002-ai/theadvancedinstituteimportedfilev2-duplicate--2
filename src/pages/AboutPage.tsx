@@ -1,6 +1,39 @@
-import { Target, Users, Award, BookOpen, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Target, Users, Award, BookOpen, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { supabase } from '../lib/supabase';
+
+interface LeadershipPreview {
+  id: string;
+  role: string;
+  name: string;
+  designation: string;
+  bio: string;
+  image_url: string;
+}
 
 export default function AboutPage() {
+  const [leadershipPreviews, setLeadershipPreviews] = useState<LeadershipPreview[]>([]);
+
+  useEffect(() => {
+    const fetchLeadership = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('leadership_profiles')
+          .select('id, role, name, designation, bio, image_url')
+          .eq('is_active', true)
+          .order('display_order')
+          .limit(3);
+
+        if (error) throw error;
+        if (data) setLeadershipPreviews(data);
+      } catch (error) {
+        console.error('Error fetching leadership previews:', error);
+      }
+    };
+
+    fetchLeadership();
+  }, []);
   const milestones = [
     { year: '2015', event: 'Academy Founded', description: 'Started with a vision to provide quality government exam coaching in Guwahati' },
     { year: '2017', event: '500+ Students Trained', description: 'Reached milestone of training over 500 students' },
@@ -86,6 +119,74 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Leadership Team
+            </h2>
+            <p className="text-lg text-gray-600">
+              Meet the visionaries guiding our academy towards excellence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {leadershipPreviews.map((leader) => {
+              const getProfileLink = () => {
+                if (leader.role === 'director') return '/about/director';
+                if (leader.role === 'dean') return '/about/dean';
+                return '/about/advisors';
+              };
+
+              const shortBio = leader.bio.length > 150
+                ? leader.bio.substring(0, 150) + '...'
+                : leader.bio;
+
+              return (
+                <div
+                  key={leader.id}
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                    {leader.image_url ? (
+                      <img
+                        src={leader.image_url}
+                        alt={leader.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center text-blue-700 text-4xl font-bold shadow-lg">
+                        {leader.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{leader.name}</h3>
+                    <p className="text-blue-600 font-semibold mb-4">{leader.designation}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      {shortBio}
+                    </p>
+                    <Link
+                      to={getProfileLink()}
+                      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+                    >
+                      View Full Profile
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {leadershipPreviews.length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-gray-600">Leadership profiles coming soon...</p>
+            </div>
+          )}
         </div>
       </section>
 
