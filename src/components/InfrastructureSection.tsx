@@ -10,7 +10,7 @@ export default function InfrastructureSection() {
     { icon: Wifi, title: 'High-Speed WiFi', description: 'Seamless connectivity' },
     { icon: BookOpen, title: 'Extensive Library', description: 'An enviable collection of books & resources' },
     { icon: Monitor, title: 'Computer Lab', description: 'Modern systems with latest software' },
-    { icon: Car, title: 'Parking Facility', description: 'Secure two-wheeler & car parking' },
+    { icon: Car, title: 'Parking Facility', description: 'Secure parking area' },
     { icon: Coffee, title: 'Cafeteria', description: 'Hygienic food & beverages' },
     { icon: Accessibility, title: 'Accessible Design', description: 'Wheelchair friendly campus' },
     { icon: Users, title: 'Study Rooms', description: 'Dedicated group study areas' }
