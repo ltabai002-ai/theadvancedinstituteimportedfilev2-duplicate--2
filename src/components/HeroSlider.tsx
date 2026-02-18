@@ -397,7 +397,7 @@ export default function HeroSlider() {
               )}
 
               {/* Main Heading */}
-              <h1 className="text-[56px] font-extrabold text-slate-900 leading-[1.15] mb-[24px]">
+              <h1 className="text-[56px] font-bold text-slate-900 leading-[1.15] mb-[24px]">
                 {slide.headline}
               </h1>
 
