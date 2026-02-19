@@ -51,10 +51,10 @@ export default function AboutPage() {
       specialization: 'GK/GA/CA - General Awareness/Current Affairs'
     },
     {
-      name: 'Prof. Anita Sharma',
-      designation: 'English Language Expert',
-      experience: '12+ years',
-      specialization: 'English Grammar, Comprehension, Writing Skills'
+      name: 'D.R. Sir',
+      designation: 'HOD English',
+      experience: '15+ Years',
+      specialization: 'English Language'
     },
     {
       name: 'Mr. Vikram Singh',

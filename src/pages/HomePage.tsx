@@ -364,19 +364,19 @@ export default function HomePage() {
                 teachingApproach: "Comprehensive approach to General Awareness with focus on current events and static GK",
                 quote: "Knowledge is power, and awareness opens doors to success"
               },
-              { 
-                name: "Prof. Anita Sharma", 
-                qualification: "M.A. English Literature", 
-                experience: "12+ Years", 
-                specialization: "English & General Awareness",
+              {
+                name: "D.R. Sir",
+                qualification: "Post Graduate",
+                experience: "15+ Years",
+                specialization: "English Language",
                 image: "/faculty-2.webp",
-                fullQualifications: "M.A. in English Literature, B.Ed.",
-                university: "Delhi University",
-                subjects: ["English Language", "Comprehension", "General Awareness", "Current Affairs"],
-                exams: ["SSC CGL", "SSC CHSL", "Banking", "All Government Exams"],
-                achievement: "Expert in English language with 300+ successful students",
-                teachingApproach: "Interactive teaching methodology with focus on practical application",
-                quote: "Language is power - master it to unlock countless opportunities"
+                fullQualifications: "Post Graduate - HOD English",
+                university: "Teaching for Professional Examinations",
+                subjects: ["English Language"],
+                exams: ["SSC CGL", "SSC CHSL", "Banking (PO/Clerk)", "Railway Exams (RRB NTPC/Group D)", "Other Government Exams"],
+                achievement: "Application based teaching style with 2000+ students mentored",
+                teachingApproach: "Application based approach focusing on practical English usage for competitive exams",
+                quote: "Master English with practical application to excel in all government exams"
               },
               { 
                 name: "Mr. Vikram Singh", 
@@ -551,19 +551,19 @@ export default function HomePage() {
                   teachingApproach: "Comprehensive approach to General Awareness with focus on current events and static GK",
                   quote: "Knowledge is power, and awareness opens doors to success"
                 },
-                { 
-                  name: "Prof. Anita Sharma", 
-                  qualification: "M.A. English Literature", 
-                  experience: "12+ Years", 
-                  specialization: "English & General Awareness",
+                {
+                  name: "D.R. Sir",
+                  qualification: "Post Graduate",
+                  experience: "15+ Years",
+                  specialization: "English Language",
                   image: "/faculty-2.webp",
-                  fullQualifications: "M.A. in English Literature, B.Ed.",
-                  university: "Delhi University",
-                  subjects: ["English Language", "Comprehension", "General Awareness", "Current Affairs"],
-                  exams: ["SSC CGL", "SSC CHSL", "Banking", "All Government Exams"],
-                  achievement: "Expert in English language with 300+ successful students",
-                  teachingApproach: "Interactive teaching methodology with focus on practical application",
-                  quote: "Language is power - master it to unlock countless opportunities"
+                  fullQualifications: "Post Graduate - HOD English",
+                  university: "Teaching for Professional Examinations",
+                  subjects: ["English Language"],
+                  exams: ["SSC CGL", "SSC CHSL", "Banking (PO/Clerk)", "Railway Exams (RRB NTPC/Group D)", "Other Government Exams"],
+                  achievement: "Application based teaching style with 2000+ students mentored",
+                  teachingApproach: "Application based approach focusing on practical English usage for competitive exams",
+                  quote: "Master English with practical application to excel in all government exams"
                 },
                 { 
                   name: "Mr. Vikram Singh", 
