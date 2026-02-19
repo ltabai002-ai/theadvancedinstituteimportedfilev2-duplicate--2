@@ -733,7 +733,7 @@ export default function CourseDetailPage() {
   const course = coursesData[courseSlug];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <section
         className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-20 relative overflow-hidden"
         style={
@@ -927,11 +927,11 @@ export default function CourseDetailPage() {
                   <span className="text-gray-900">Course </span>
                   <span className="text-[#004BB8]">Highlights</span>
                 </h2>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {course.highlights.map((highlight, index) => (
-                    <div key={index} className="flex items-start space-x-3">
+                    <div key={index} className="flex items-start space-x-3 min-w-0">
                       <CheckCircle2 className="w-5 h-5 text-[#004BB8] flex-shrink-0 mt-1" />
-                      <span className="text-gray-700">{highlight}</span>
+                      <span className="text-gray-700 break-words">{highlight}</span>
                     </div>
                   ))}
                 </div>
