@@ -328,7 +328,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={leader.id}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col"
                 >
                   <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
                     {leader.image_url ? (
@@ -343,15 +343,15 @@ export default function AboutPage() {
                       </div>
                     )}
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">{leader.name}</h3>
                     <p className="text-blue-600 font-semibold mb-4">{leader.designation}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
                       {shortBio}
                     </p>
                     <Link
                       to={getProfileLink()}
-                      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+                      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors mt-auto"
                     >
                       View Full Profile
                       <ArrowRight className="w-4 h-4" />
