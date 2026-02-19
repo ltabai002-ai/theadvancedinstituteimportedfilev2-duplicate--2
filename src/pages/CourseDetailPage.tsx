@@ -780,8 +780,8 @@ export default function CourseDetailPage() {
 
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 space-y-12">
+          <div className="grid lg:grid-cols-3 gap-8 min-w-0">
+            <div className="lg:col-span-2 space-y-12 min-w-0">
               {/* Video Section */}
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">Course Introduction</h2>
@@ -851,11 +851,11 @@ export default function CourseDetailPage() {
 
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Course Overview</h2>
-                <p className="text-gray-700 leading-relaxed text-center md:text-left">{course.overview}</p>
+                <p className="text-gray-700 leading-relaxed text-center md:text-left break-words">{course.overview}</p>
               </div>
 
               {courseSlug === 'rrb-ntpc' && (
-                <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 border-2 border-teal-200">
+                <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-4 md:p-8 border-2 border-teal-200">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="bg-teal-600 p-3 rounded-full">
                       <Monitor className="w-8 h-8 text-white" />
@@ -1001,26 +1001,26 @@ export default function CourseDetailPage() {
                   )}
                   <div className="space-y-6 md:space-y-8">
                     {course.examPattern.map((pattern, index) => (
-                      <div key={index} className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+                      <div key={index} className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden max-w-full">
                         <div className="bg-primary text-white px-3 py-2 md:px-6 md:py-3">
-                          <h3 className="text-sm md:text-xl font-bold">
+                          <h3 className="text-sm md:text-xl font-bold break-words">
                             {course.name} Exam Pattern {pattern.stage}
                           </h3>
                         </div>
-                        <div className="overflow-x-auto">
-                          <table className="w-full text-xs md:text-base">
+                        <div className="overflow-x-auto max-w-full">
+                          <table className="w-full text-xs md:text-base table-fixed">
                             <thead>
                               <tr className="bg-orange-400 text-black">
-                                <th className="px-2 py-2 md:px-6 md:py-3 text-left font-bold border-r border-orange-500">Sections</th>
-                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold border-r border-orange-500">No. of Questions</th>
-                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold border-r border-orange-500">Total Marks</th>
-                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold">Duration</th>
+                                <th className="px-2 py-2 md:px-6 md:py-3 text-left font-bold border-r border-orange-500 w-[35%]">Sections</th>
+                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold border-r border-orange-500 w-[22%]">Questions</th>
+                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold border-r border-orange-500 w-[20%]">Marks</th>
+                                <th className="px-2 py-2 md:px-6 md:py-3 text-center font-bold w-[23%]">Duration</th>
                               </tr>
                             </thead>
                             <tbody>
                               {pattern.sections.map((section, sectionIndex) => (
                                 <tr key={sectionIndex} className="border-b border-gray-200">
-                                  <td className="px-2 py-2 md:px-6 md:py-4 border-r border-gray-200">{section.name}</td>
+                                  <td className="px-2 py-2 md:px-6 md:py-4 border-r border-gray-200 break-words">{section.name}</td>
                                   <td className="px-2 py-2 md:px-6 md:py-4 border-r border-gray-200 text-center">{section.questions}</td>
                                   <td className="px-2 py-2 md:px-6 md:py-4 border-r border-gray-200 text-center">{section.marks}</td>
                                   {sectionIndex === 0 && (
@@ -1068,7 +1068,7 @@ export default function CourseDetailPage() {
               </div>
 
               {specialLectures.length > 0 && (
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 border-2 border-amber-200">
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-4 md:p-8 border-2 border-amber-200">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-3 rounded-full">
                       <GraduationCap className="w-8 h-8 text-white" />
@@ -1109,7 +1109,7 @@ export default function CourseDetailPage() {
               )}
             </div>
 
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 min-w-0">
               <div className="sticky top-24 space-y-6">
                 <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Enroll in This Course</h3>
