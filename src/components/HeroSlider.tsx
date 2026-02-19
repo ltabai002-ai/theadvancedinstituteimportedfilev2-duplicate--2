@@ -420,22 +420,6 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* Navigation Arrows - Desktop only */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 hidden lg:block"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6 text-gray-900" />
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 hidden lg:block"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 text-gray-900" />
-      </button>
 
       {/* Dots Indicator - Desktop Only */}
       <div className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 gap-2">
