@@ -402,14 +402,14 @@ export default function HeroSlider() {
               </h1>
 
               {/* Subtext */}
-              <p className="text-[20px] font-normal text-gray-600 leading-[1.6] mb-[72px]">
+              <p className="text-[20px] font-normal text-gray-600 leading-[1.6] pb-10">
                 {slide.subtext}
               </p>
 
               {/* Primary CTA Button */}
               <Link
                 to={slide.ctaLink}
-                className="inline-block w-auto bg-blue-600 text-white h-[52px] px-[28px] rounded-lg text-[16px] font-semibold hover:bg-blue-700 transition-all duration-300 hover:shadow-lg leading-[52px] text-center"
+                className="inline-block w-auto bg-blue-600 text-white h-[52px] px-[28px] rounded-lg text-[16px] font-semibold hover:bg-blue-700 transition-all duration-300 hover:shadow-lg leading-[52px] text-center mt-6"
               >
                 {slide.ctaText}
               </Link>
