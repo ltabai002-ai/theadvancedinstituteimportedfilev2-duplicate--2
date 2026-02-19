@@ -50,6 +50,17 @@ const courses: Course[] = [
     hasSpecialLectures: true
   },
   {
+    name: 'SBI PO & IBPS PO',
+    duration: '6-8 Months',
+    cohortStart: '5th March 2026',
+    slug: 'sbi-po-ibps-po',
+    category: 'Banking',
+    logo: '/banking-logo.webp',
+    backgroundImage: '/banking-background.webp',
+    hasOnlineSupport: true,
+    hasSpecialLectures: true
+  },
+  {
     name: 'Banking Clerical',
     duration: '6 Months',
     cohortStart: '10th March 2026',
