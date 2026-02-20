@@ -22,6 +22,7 @@ import TabbedCourseSection from '../components/TabbedCourseSection';
 import HeroSlider from '../components/HeroSlider';
 import InfrastructureSection from '../components/InfrastructureSection';
 import MobileAppSection from '../components/MobileAppSection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -331,6 +332,8 @@ export default function HomePage() {
       <InfrastructureSection />
 
       <MobileAppSection />
+
+      <TestimonialsSection />
 
       <section className="py-24 md:py-32 bg-gradient-to-br from-primary-50 via-white to-ocean-50 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>

@@ -12,6 +12,7 @@ import AdvisorsPage from './pages/AdvisorsPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="admin/testimonials" element={<AdminPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
