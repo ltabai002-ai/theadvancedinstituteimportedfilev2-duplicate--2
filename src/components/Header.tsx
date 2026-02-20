@@ -81,7 +81,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-14 md:h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=200&h=100"
+              src="/image.png"
               alt="The Advanced Learning Academy"
               className="h-10 md:h-12 w-auto"
             />
