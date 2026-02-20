@@ -63,7 +63,7 @@ export default function HomePage() {
     },
     {
       question: 'Are online classes available?',
-      answer: 'Yes! We now offer online classes for select courses like RRB NTPC with live sessions, recorded lectures, online doubt clearing, and digital study materials accessible from anywhere.'
+      answer: 'Yes! We offer comprehensive online classes for all exams with live interactive sessions, recorded lectures for revision, online doubt clearing, and digital study materials accessible from anywhere.'
     },
     {
       question: 'Are classes available offline?',
