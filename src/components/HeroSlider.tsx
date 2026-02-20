@@ -449,26 +449,6 @@ export default function HeroSlider() {
           />
         ))}
       </div>
-
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 w-full h-24 lg:h-32 line-height-0 overflow-hidden">
-        <svg
-          viewBox="0 0 1440 150"
-          preserveAspectRatio="none"
-          className="w-full h-full"
-        >
-          <path
-            d="M0,80 Q360,20 720,80 T1440,80 L1440,150 L0,150 Z"
-            fill="url(#waveGradient)"
-          />
-          <defs>
-            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#F8FAFC" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#F0F4F8" stopOpacity="1" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
     </section>
   );
 }
