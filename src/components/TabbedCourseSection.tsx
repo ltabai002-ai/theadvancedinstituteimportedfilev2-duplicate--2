@@ -382,7 +382,7 @@ export default function TabbedCourseSection() {
                           {course.hasOnlineSupport && (
                             <div className="absolute top-3 right-3 z-20 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center space-x-1.5">
                               <Wifi className="w-3.5 h-3.5" />
-                              <span>Online</span>
+                              <span>Online + Offline Classes</span>
                             </div>
                           )}
                           <div
@@ -422,7 +422,7 @@ export default function TabbedCourseSection() {
                                 {course.hasOnlineSupport && (
                                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded-full shadow-md">
                                     <Wifi className="w-3.5 h-3.5" />
-                                    <span>Online Classes</span>
+                                    <span>Online + Offline Classes</span>
                                   </div>
                                 )}
                                 {course.hasSpecialLectures && (
@@ -543,7 +543,7 @@ export default function TabbedCourseSection() {
                       {course.hasOnlineSupport && (
                         <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center space-x-1.5">
                           <Wifi className="w-3.5 h-3.5" />
-                          <span>Online</span>
+                          <span>Online + Offline Classes</span>
                         </div>
                       )}
                       {course.hasSpecialLectures && (
