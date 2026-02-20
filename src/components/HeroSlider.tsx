@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -9,7 +8,7 @@ interface Slide {
   headline: string;
   subtext: string;
   personImage: string;
-  carouselImages?: string[]; // Optional carousel images for mobile
+  carouselImages?: string[];
   ctaText: string;
   ctaLink: string;
 }
@@ -30,103 +29,12 @@ const slides: Slide[] = [
     ],
     ctaText: "Explore Programs",
     ctaLink: "/courses"
-  },
-  {
-    id: 2,
-    eyebrowText: "",
-    headline: "SSC & Railway Exam Preparation That Works",
-    subtext: "Structured classroom programs with small batch sizes, comprehensive study material, and personalized mentoring from experienced faculty.",
-    personImage: "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=800",
-    carouselImages: [
-      "https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
-    ctaText: "View All Courses",
-    ctaLink: "/courses"
-  },
-  {
-    id: 3,
-    eyebrowText: "",
-    headline: "Your Dream Government Job Starts Here",
-    subtext: "Small batches of max 20 students for personal attention, full-length mock exams matching actual exam patterns, and expert guidance every step of the way.",
-    personImage: "https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=800",
-    carouselImages: [
-      "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
-    ctaText: "Book Free Demo",
-    ctaLink: "/contact"
   }
 ];
 
 export default function HeroSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const [carouselIndex, setCarouselIndex] = useState(1); // Start at middle image
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  useEffect(() => {
-    if (!isAutoPlaying || isPaused) return;
-
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setTimeout(() => setIsTransitioning(false), 50);
-      }, 600);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, isPaused]);
-
-  // Sync carousel with slide changes - reset to center and pause briefly
-  useEffect(() => {
-    setCarouselIndex(1); // Reset to center image
-    setIsPaused(true); // Pause carousel rotation
-
-    // Resume carousel rotation after 2 seconds
-    const timer = setTimeout(() => {
-      setIsPaused(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [currentSlide]);
-
-  const nextSlide = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-      setTimeout(() => setIsTransitioning(false), 50);
-      setIsAutoPlaying(false);
-    }, 600);
-  };
-
-  const prevSlide = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-      setTimeout(() => setIsTransitioning(false), 50);
-      setIsAutoPlaying(false);
-    }, 600);
-  };
-
-  const goToSlide = (index: number) => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentSlide(index);
-      setTimeout(() => setIsTransitioning(false), 50);
-      setIsAutoPlaying(false);
-    }, 600);
-  };
+  const [carouselIndex, setCarouselIndex] = useState(1);
 
   const handleMouseEnter = () => {
     setIsPaused(true);
@@ -137,57 +45,34 @@ export default function HeroSlider() {
   };
 
   const handleNextCarousel = useCallback(() => {
-    const images = slides[currentSlide].carouselImages || [slides[currentSlide].personImage];
+    const images = slides[0].carouselImages || [slides[0].personImage];
     setCarouselIndex((prev) => (prev + 1) % images.length);
-  }, [currentSlide]);
+  }, []);
 
   const handlePrevCarousel = () => {
-    const images = slides[currentSlide].carouselImages || [slides[currentSlide].personImage];
+    const images = slides[0].carouselImages || [slides[0].personImage];
     setCarouselIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  // Auto-rotate mobile carousel
   useEffect(() => {
     if (isPaused) return;
 
     const carouselInterval = setInterval(() => {
       handleNextCarousel();
-    }, 3500); // Rotate every 3.5 seconds
+    }, 3500);
 
     return () => clearInterval(carouselInterval);
   }, [handleNextCarousel, isPaused]);
 
-  // Touch handlers for swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
     setIsPaused(true);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      handleNextCarousel();
-    }
-    if (isRightSwipe) {
-      handlePrevCarousel();
-    }
-
-    // Reset touch state and resume auto-rotation after a delay
-    setTouchStart(0);
-    setTouchEnd(0);
     setTimeout(() => setIsPaused(false), 500);
   };
 
-  const slide = slides[currentSlide];
+  const slide = slides[0];
   const carouselImages = slide.carouselImages || [slide.personImage];
 
   return (
@@ -361,24 +246,6 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Mobile Dots Indicator */}
-        <div className="flex justify-center gap-2 pb-5 bg-white">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 ease-in-out rounded-full cursor-pointer ${
-                index === currentSlide
-                  ? 'w-6 h-2 rounded'
-                  : 'w-2 h-2'
-              }`}
-              style={{
-                backgroundColor: index === currentSlide ? '#0D6EFD' : '#CBD5E0'
-              }}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Desktop Content Container - Positioned in Left Column */}
@@ -421,34 +288,6 @@ export default function HeroSlider() {
       </div>
 
 
-      {/* Dots Indicator - Desktop Only */}
-      <div className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 ease-in-out rounded-full cursor-pointer ${
-              index === currentSlide
-                ? 'w-6 h-2 rounded'
-                : 'w-2 h-2'
-            }`}
-            style={{
-              backgroundColor: index === currentSlide ? '#0D6EFD' : '#CBD5E0'
-            }}
-            onMouseEnter={(e) => {
-              if (index !== currentSlide) {
-                e.currentTarget.style.backgroundColor = '#A0AEC0';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (index !== currentSlide) {
-                e.currentTarget.style.backgroundColor = '#CBD5E0';
-              }
-            }}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </section>
   );
 }
