@@ -51,7 +51,6 @@ export default function Header() {
     { name: 'Courses', path: '/courses' },
     { name: 'About Us', path: '/about' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Results', path: '/results' },
     { name: 'Contact', path: '/contact' },
   ];
 

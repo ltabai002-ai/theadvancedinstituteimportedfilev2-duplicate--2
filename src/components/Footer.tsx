@@ -49,11 +49,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/results" className="text-sm  transition-colors">
-                  Results
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="text-sm  transition-colors">
                   Contact Us
                 </Link>

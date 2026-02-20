@@ -10,7 +10,6 @@ import DeanPage from './pages/DeanPage';
 import AdvisorsPage from './pages/AdvisorsPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
-import ResultsPage from './pages/ResultsPage';
 import ContactPage from './pages/ContactPage';
 import FeatureCarouselDemo from './pages/FeatureCarouselDemo';
 
@@ -29,7 +28,6 @@ function App() {
           <Route path="about/advisors" element={<AdvisorsPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
-          <Route path="results" element={<ResultsPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="carousel-demo" element={<FeatureCarouselDemo />} />
         </Route>
