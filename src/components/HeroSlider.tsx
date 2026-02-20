@@ -68,6 +68,10 @@ export default function HeroSlider() {
     setIsPaused(true);
   };
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
+  };
+
   const handleTouchEnd = () => {
     setTimeout(() => setIsPaused(false), 500);
   };
