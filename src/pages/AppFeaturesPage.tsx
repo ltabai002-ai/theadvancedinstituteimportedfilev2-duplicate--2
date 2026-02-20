@@ -89,12 +89,12 @@ export default function AppFeaturesPage() {
         </div>
 
         <div ref={headerRef} className={`mb-16 text-center transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-rose-md">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-ocean-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-blue-md">
             <Rocket className="w-4 h-4" />
             Coming Soon
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 via-ocean-600 to-primary-700 bg-clip-text text-transparent">
             Everything You Need to Succeed
           </h1>
 
@@ -116,7 +116,7 @@ export default function AppFeaturesPage() {
                   key={index}
                   className="group bg-white rounded-2xl p-8 border border-primary-100 shadow-blue-md hover:shadow-blue-lg transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-rose-md">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-blue-md">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
@@ -126,7 +126,7 @@ export default function AppFeaturesPage() {
                   <ul className="space-y-2">
                     {feature.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                        <span className="w-1.5 h-1.5 bg-rose-500 rounded-full mt-1.5 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-1.5 flex-shrink-0"></span>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -138,7 +138,7 @@ export default function AppFeaturesPage() {
         </div>
 
         <div ref={statsRef} className={`mb-20 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl border border-rose-100 p-12">
+          <div className="bg-gradient-to-br from-primary-50 to-ocean-50 rounded-3xl border border-primary-100 p-12">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Building the Future of Learning
             </h2>
@@ -148,7 +148,7 @@ export default function AppFeaturesPage() {
                 const Icon = stat.icon;
                 return (
                   <div key={index} className="text-center group">
-                    <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-rose-md">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-blue-md">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <p className="text-gray-600 text-sm mb-2">{stat.label}</p>
@@ -171,7 +171,7 @@ export default function AppFeaturesPage() {
 
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm font-bold">✓</span>
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export default function AppFeaturesPage() {
               </li>
 
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm font-bold">✓</span>
                 </div>
                 <div>
@@ -191,7 +191,7 @@ export default function AppFeaturesPage() {
               </li>
 
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm font-bold">✓</span>
                 </div>
                 <div>
@@ -201,7 +201,7 @@ export default function AppFeaturesPage() {
               </li>
 
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-ocean-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm font-bold">✓</span>
                 </div>
                 <div>
@@ -214,17 +214,17 @@ export default function AppFeaturesPage() {
 
           <div className={`relative transition-all duration-700 delay-200 ${featuresVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative mx-auto w-64 h-[480px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-400 via-pink-500 to-rose-600 rounded-[3rem] shadow-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 via-ocean-500 to-primary-600 rounded-[3rem] shadow-2xl"></div>
 
               <div className="absolute inset-3 bg-black rounded-[2.5rem] overflow-hidden">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-6 bg-black rounded-b-3xl z-10"></div>
 
-                <div className="relative h-full bg-gradient-to-br from-rose-400 via-pink-500 to-rose-600 flex flex-col items-center justify-center p-8 text-white">
+                <div className="relative h-full bg-gradient-to-br from-primary-400 via-ocean-500 to-primary-600 flex flex-col items-center justify-center p-8 text-white">
                   <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
 
                   <div className="relative z-10 text-center">
                     <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mb-8 shadow-2xl mx-auto">
-                      <BookOpen className="w-12 h-12 text-rose-600" />
+                      <BookOpen className="w-12 h-12 text-primary-600" />
                     </div>
                     <h3 className="text-2xl font-bold mb-4 drop-shadow-lg">
                       The Advanced<br />Learning Academy
@@ -242,7 +242,7 @@ export default function AppFeaturesPage() {
           </div>
         </div>
 
-        <div ref={ctaRef} className={`bg-gradient-to-r from-rose-500 to-pink-500 rounded-3xl p-12 text-white text-center transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div ref={ctaRef} className={`bg-gradient-to-r from-primary-500 to-ocean-500 rounded-3xl p-12 text-white text-center transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Be the First to Download
           </h2>
@@ -252,7 +252,7 @@ export default function AppFeaturesPage() {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <div className="flex-1 relative max-w-xs">
-              <button className="w-full bg-white hover:bg-gray-100 text-rose-600 rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-lg font-bold">
+              <button className="w-full bg-white hover:bg-gray-100 text-primary-600 rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-lg font-bold">
                 <Apple className="w-6 h-6" />
                 <div className="text-left">
                   <div className="text-xs">Download on the</div>
@@ -260,12 +260,12 @@ export default function AppFeaturesPage() {
                 </div>
               </button>
               <div className="absolute inset-0 bg-black/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                <span className="text-xs font-bold bg-white text-rose-600 px-3 py-1 rounded-full">Coming Soon</span>
+                <span className="text-xs font-bold bg-white text-primary-600 px-3 py-1 rounded-full">Coming Soon</span>
               </div>
             </div>
 
             <div className="flex-1 relative max-w-xs">
-              <button className="w-full bg-white hover:bg-gray-100 text-rose-600 rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-lg font-bold">
+              <button className="w-full bg-white hover:bg-gray-100 text-primary-600 rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-lg font-bold">
                 <PlayCircle className="w-6 h-6" />
                 <div className="text-left">
                   <div className="text-xs">Get it on</div>
@@ -273,14 +273,14 @@ export default function AppFeaturesPage() {
                 </div>
               </button>
               <div className="absolute inset-0 bg-black/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                <span className="text-xs font-bold bg-white text-rose-600 px-3 py-1 rounded-full">Coming Soon</span>
+                <span className="text-xs font-bold bg-white text-primary-600 px-3 py-1 rounded-full">Coming Soon</span>
               </div>
             </div>
           </div>
 
           <Link
             to="/"
-            className="inline-block bg-white hover:bg-gray-100 text-rose-600 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-white hover:bg-gray-100 text-primary-600 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Back to Home
           </Link>
